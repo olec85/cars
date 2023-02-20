@@ -30,7 +30,7 @@
         </div>
     </header>
 
-    <section class="main" ngstyle="bgPos">
+    <section class="main" [ngStyle]="bgPos">
         <div class="container">
             <div class="main-info">
                 <h1 class="main-title">Аренда премиальных автомобилей</h1>
@@ -46,7 +46,7 @@
         <div class="container">
             <h2 class="sub-title">Наш автопарк</h2>
             <div class="cars-items">
-                <div class="car-item" *ngfor = "let car of carsData">
+                <div class="car-item" *ngFor = "let car of carsData">
                     <div class="car-item-img">
                         <img src="../assets/img/{{car.image}}" alt="">
                     </div>
@@ -212,10 +212,10 @@
             <div class="price-text">
                 Заполните данные, и мы перезвоним вам для уточнения всех деталей бронирования
             </div>
-            <form action="" class="price-form" formgroup = "priceForm">
-                <input type="text" class="price-input" id="name" placeholder="Ваше имя" formcontrolname="name">
-                <input type="text" class="price-input" id="phone" placeholder="Ваш телефон" formcontrolname = "phone">
-                <input type="text" class="price-input" id="car" placeholder="Автомобиль,который вас интересует" formcontrolname = "car">
+            <form action="" class="price-form" [formGroup] = "priceForm">
+                <input type="text" class="price-input" id="name" placeholder="Ваше имя" formControlName="name">
+                <input type="text" class="price-input" id="phone" placeholder="Ваш телефон" formControlName = "phone">
+                <input type="text" class="price-input" id="car" placeholder="Автомобиль,который вас интересует" formControlName = "car">
                 <button class="button" type="button" id="price-action" (click)="onSubmit()" [disabled]="!priceForm.valid">Узнать цену</button>
             </form>
             <img src="../assets/img/rolls.png" alt="rolss" class="price-image" ngstyle="trans">

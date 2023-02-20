@@ -9,50 +9,50 @@ import {FormBuilder, Validators} from "@angular/forms";
 })
 
 export class AppComponent {
-  priceForm = this.fb.group({
-    name:['', "Validators"],
-    phone:['', "Validators"],
-    car:['', "Validators"]
+  priceForm = this.fb.group(controls:{
+    name:['', Validators.required],
+    phone:['', Validators.required],
+    car:['', Validators.required]
   });
 
   carsData = [
       {
-        Image: "huracan.png",
+        image: "huracan.png",
         name: "Lamborghini Huracan Spyder",
         gear: "Полный",
         engine: 5.2,
         places: 2
       },
       {
-        Image: "corvette.png",
+        image: "corvette.png",
         name: "Chevrolet Corvette",
         gear: "Полный",
         engine: 6.2,
         places: 2
       },
       {
-        Image: "california.png",
+        image: "california.png",
         name: "Ferrari California",
         gear: "Полный",
         engine: 3.9,
         places: 4
       },
       {
-        Image: "urus.png",
+        image: "urus.png",
         name: "Lamborghini Urus",
         gear: "Полный",
         engine: 4.0,
         places: 5
       },
       {
-        Image: "r8.png",
+        image: "r8.png",
         name: "Audi R8",
         gear: "Полный",
         engine: 5.2,
         places: 2
       },
       {
-        Image: "camaro.png",
+        image: "camaro.png",
         name: "Аренда Chevrolet Camaro",
         gear: "Полный",
         engine: 2.0,
@@ -82,9 +82,9 @@ bgPos: any;
 @HostListener('document:scroll', ['$event'])
 onScroll() {
   this.bgPos = {backgroundPositionX: '0' + (0.3 * window.scrollY) + 'px'};
-}
 
-  onSubmit() {
+
+  onSubmit()
     if (this.priceForm.valid) {
       alert("Спасибо за заявку,мы свяжемся с вами в ближайшее время");
     }
